@@ -1,0 +1,28 @@
+class Example {
+    int a;
+    int b;
+
+    Example() {
+        a = 10;
+        b = 15;
+    }
+
+    Example(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    void disp() {
+        System.out.println("a: " + a + ", b: " + b);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Example obj1 = new Example();
+        Example obj2 = new Example(20, 25);
+        
+        obj1.disp();
+        obj2.disp();
+    }
+}
