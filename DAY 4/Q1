@@ -1,0 +1,31 @@
+public class ArithmeticExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+            System.out.println("Division Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Division by zero exception: " + e.getMessage());
+        }
+
+        try {
+            double logResult = Math.log(-1);
+            System.out.println("Logarithm Result: " + logResult);
+        } catch (ArithmeticException e) {
+            System.out.println("Logarithm of negative number exception: " + e.getMessage());
+        }
+
+        try {
+            double tanResult = Math.tan(Math.toRadians(90));
+            System.out.println("Tan Result: " + tanResult);
+        } catch (ArithmeticException e) {
+            System.out.println("Tan of 90 degrees exception: " + e.getMessage());
+        }
+
+        try {
+            double zeroPowerZero = Math.pow(0, 0);
+            System.out.println("Zero power Zero Result: " + zeroPowerZero);
+        } catch (ArithmeticException e) {
+            System.out.println("Zero power zero exception: " + e.getMessage());
+        }
+    }
+}
