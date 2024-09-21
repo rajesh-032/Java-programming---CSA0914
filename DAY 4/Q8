@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+class InvalidDecimalException extends Exception {
+    public InvalidDecimalException(String message) {
+        super(message);
+    }
+}
+
+public class CustomExceptionDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a decimal number: ");
+        String userInput = scanner.nextLine();
+
+        try {
+            validateDecimal(userInput);
+            System.out.println("Valid decimal number: " + userInput);
+        } catch (InvalidDecimalException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    static void validateDecimal(String input) throws InvalidDecimalException {
+        if (!input.matches("-?\\d+(\\.\\d+)?")) {
+            throw new InvalidDecimalException("Invalid decimal number: " + input);
+        }
+    }
+}
