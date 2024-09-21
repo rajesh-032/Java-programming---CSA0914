@@ -1,0 +1,22 @@
+public class MatrixDemo {
+    public static void main(String[] args) {
+        int[][] matrixA = new int[1][9];
+        int[][] matrixB = new int[1][9];
+
+        for (int i = 0; i < 9; i++) {
+            matrixA[0][i] = i + 1;
+            matrixB[0][i] = 9 - i;
+        }
+
+        System.out.print("Matrix A: ");
+        for (int i = 0; i < 9; i++) {
+            System.out.print(matrixA[0][i] + " ");
+        }
+        System.out.println();
+
+        System.out.print("Matrix B: ");
+        for (int i = 0; i < 9; i++) {
+            System.out.print(matrixB[0][i] + " ");
+        }
+    }
+}
