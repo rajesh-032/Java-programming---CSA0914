@@ -1,0 +1,36 @@
+public class DataTypeConversionDemo {
+    public static void main(String[] args) {
+        byte byteValue = 10;
+        short shortValue = byteValue;
+        int intValue = shortValue;
+        long longValue = intValue;
+
+        float floatValue = longValue;
+        double doubleValue = floatValue;
+
+        System.out.println("Implicit Conversion:");
+        System.out.println("Byte to Short: " + shortValue);
+        System.out.println("Short to Int: " + intValue);
+        System.out.println("Int to Long: " + longValue);
+        System.out.println("Long to Float: " + floatValue);
+        System.out.println("Float to Double: " + doubleValue);
+
+        doubleValue = 12345678901234567890.0;
+        floatValue = (float) doubleValue;
+        intValue = (int) floatValue;
+
+        System.out.println("\nExplicit Conversion:");
+        System.out.println("Double to Float: " + floatValue);
+        System.out.println("Float to Int: " + intValue);
+
+        byte overflowByte = 127;
+        overflowByte += 1;
+        System.out.println("\nOverflow Scenario:");
+        System.out.println("Byte Overflow: " + overflowByte);
+
+        byte underflowByte = -128;
+        underflowByte -= 1;
+        System.out.println("\nUnderflow Scenario:");
+        System.out.println("Byte Underflow: " + underflowByte);
+    }
+}
