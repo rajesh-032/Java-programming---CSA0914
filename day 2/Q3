@@ -1,0 +1,33 @@
+public class StringMethodsDemo {
+    public static void main(String[] args) {
+        String str1 = new String("Hello");
+        String str2 = "World";
+
+        String combined = str1 + " " + str2;
+        System.out.println("Combined String: " + combined);
+
+        System.out.println("Length of str1: " + str1.length());
+        System.out.println("Character at index 1 of str2: " + str2.charAt(1));
+        System.out.println("Substring of str1 (1, 4): " + str1.substring(1, 4));
+        System.out.println("Index of 'o' in str1: " + str1.indexOf('o'));
+        System.out.println("str1 in uppercase: " + str1.toUpperCase());
+        System.out.println("str2 in lowercase: " + str2.toLowerCase());
+        System.out.println("Does str1 start with 'He': " + str1.startsWith("He"));
+        System.out.println("Does str2 end with 'ld': " + str2.endsWith("ld"));
+        
+        String[] splitStr = combined.split(" ");
+        System.out.println("First part after split: " + splitStr[0]);
+        System.out.println("Second part after split: " + splitStr[1]);
+        
+        String trimmedStr = "   Hello   ";
+        System.out.println("Trimmed String: '" + trimmedStr.trim() + "'");
+        
+        String replacedStr = combined.replace("World", "Java");
+        System.out.println("Replaced String: " + replacedStr);
+        
+        System.out.println("String equals: " + str1.equals("Hello"));
+        System.out.println("String equalsIgnoreCase: " + str1.equalsIgnoreCase("hello"));
+        
+        System.out.println("String toCharArray: " + java.util.Arrays.toString(str1.toCharArray()));
+    }
+}
