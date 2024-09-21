@@ -1,0 +1,23 @@
+public class ConfusionMatrix {
+    public static void main(String[] args) {
+        int[][] confusionMatrix = {
+            {50, 10},
+            {5, 35}
+        };
+
+        int TP = confusionMatrix[1][1];
+        int TN = confusionMatrix[0][0];
+        int FP = confusionMatrix[0][1];
+        int FN = confusionMatrix[1][0];
+
+        double precision = (double) TP / (TP + FP);
+        double recall = (double) TP / (TP + FN);
+        double F1Score = 2 * (precision * recall) / (precision + recall);
+
+        System.out.println("True Positive (TP): " + TP);
+        System.out.println("True Negative (TN): " + TN);
+        System.out.println("False Positive (FP): " + FP);
+        System.out.println("False Negative (FN): " + FN);
+        System.out.println("F1 Score: " + F1Score);
+    }
+}
