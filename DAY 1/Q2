@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class RotateList {
+    public static void rotate(List<Integer> list, int k) {
+        int n = list.size();
+        k %= n;
+        Collections.reverse(list);
+        Collections.reverse(list.subList(0, k));
+        Collections.reverse(list.subList(k, n));
+    }
+
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        rotate(numbers, 2);
+        System.out.println(numbers);  // Output: [4, 5, 1, 2, 3]
+    }
+}
