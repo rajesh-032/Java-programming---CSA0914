@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class NumberFormatExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            int number = Integer.parseInt("abc");
+            System.out.println("Parsed Number: " + number);
+        } catch (NumberFormatException e) {
+            System.out.println("Parsing a Non-Numeric String: " + e.getMessage());
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        String userInput = scanner.nextLine();
+        try {
+            int userNumber = Integer.parseInt(userInput);
+            System.out.println("User Input Number: " + userNumber);
+        } catch (NumberFormatException e) {
+            System.out.println("Reading User Input Without Validation: " + e.getMessage());
+        }
+
+        try {
+            DecimalFormat decimalFormat = new DecimalFormat("#.##");
+            System.out.println(decimalFormat.format(Double.parseDouble("123.4567")));
+            System.out.println(decimalFormat.format(Double.parseDouble("abc")));
+        } catch (NumberFormatException e) {
+            System.out.println("Formatting Issues in 'Decimal Format': " + e.getMessage());
+        }
+
+        try {
+            String localizedNumber = "1.234,56";
+            DecimalFormat df = new DecimalFormat("#,###.##");
+            System.out.println(df.parse(localizedNumber));
+        } catch (NumberFormatException e) {
+            System.out.println("Incorrectly using localized decimal separators: " + e.getMessage());
+        } catch (java.text.ParseException e) {
+            System.out.println("Parse Exception: " + e.getMessage());
+        }
+    }
+}
