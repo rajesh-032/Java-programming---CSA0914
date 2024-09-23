@@ -1,0 +1,29 @@
+class Animal {
+    String name;
+
+    Animal(String name) {
+        this.name = name;
+    }
+
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    Dog(String name) {
+        super(name);
+    }
+
+    @Override
+    void makeSound() {
+        System.out.println("The dog barks");
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Dog dog = new Dog("Buddy");
+        dog.makeSound();
+    }
+}
