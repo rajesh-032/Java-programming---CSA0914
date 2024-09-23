@@ -1,0 +1,38 @@
+class Vehicle {
+    int speed;
+    String fuelType;
+
+    Vehicle(int speed, String fuelType) {
+        this.speed = speed;
+        this.fuelType = fuelType;
+    }
+}
+
+class Car extends Vehicle {
+    String model;
+
+    Car(int speed, String fuelType, String model) {
+        super(speed, fuelType);
+        this.model = model;
+    }
+}
+
+class ElectricCar extends Car {
+    int batteryCapacity;
+
+    ElectricCar(int speed, String fuelType, String model, int batteryCapacity) {
+        super(speed, fuelType, model);
+        this.batteryCapacity = batteryCapacity;
+    }
+
+    void display() {
+        System.out.println("Speed: " + speed + ", Fuel Type: " + fuelType + ", Model: " + model + ", Battery Capacity: " + batteryCapacity);
+    }
+}
+
+public class MultilevelInheritanceExample {
+    public static void main(String[] args) {
+        ElectricCar electricCar = new ElectricCar(120, "Electric", "Tesla Model S", 100);
+        electricCar.display();
+    }
+}
