@@ -1,0 +1,30 @@
+class Employee {
+    private String name;
+    protected int id;
+    public String department;
+
+    Employee(String name, int id, String department) {
+        this.name = name;
+        this.id = id;
+        this.department = department;
+    }
+}
+
+class Manager extends Employee {
+    Manager(String name, int id, String department) {
+        super(name, id, department);
+    }
+
+    void display() {
+        // System.out.println("Name: " + name); // Compilation error
+        System.out.println("ID: " + id);
+        System.out.println("Department: " + department);
+    }
+}
+
+public class AccessModifiersExample {
+    public static void main(String[] args) {
+        Manager manager = new Manager("Alice", 101, "HR");
+        manager.display();
+    }
+}
