@@ -1,0 +1,19 @@
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class CurrentTimeInGMT {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input the time zone offset to GMT: ");
+        int offset = scanner.nextInt();
+        
+        LocalDateTime now = LocalDateTime.now(ZoneOffset.ofHours(offset));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String currentTime = now.format(formatter);
+        
+        System.out.println("Current time is " + currentTime);
+        scanner.close();
+    }
+}
