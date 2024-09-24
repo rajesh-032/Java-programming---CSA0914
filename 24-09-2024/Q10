@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class BreakIntegerIntoDigits {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input six non-negative digits: ");
+        int number = scanner.nextInt();
+
+        String digits = Integer.toString(number);
+        for (char digit : digits.toCharArray()) {
+            System.out.print(digit + " ");
+        }
+        
+        scanner.close();
+    }
+}
