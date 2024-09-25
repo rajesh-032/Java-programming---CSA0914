@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class NumberSquareArray {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user for a number
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        // Create an array with the number and its square
+        int[] numberArray = new int[2];
+        numberArray[0] = number;            // First element: the number
+        numberArray[1] = number * number;   // Second element: the square of the number
+
+        // Output the array
+        System.out.println("Array: [" + numberArray[0] + ", " + numberArray[1] + "]");
+
+        // Close the scanner
+        scanner.close();
+    }
+}
