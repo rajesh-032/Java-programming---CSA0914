@@ -1,0 +1,29 @@
+// Superclass
+class Animal {
+    String name;
+
+    // Parameterized constructor
+    public Animal(String name) {
+        this.name = name;
+        System.out.println("Animal name: " + this.name);
+    }
+}
+
+// Subclass
+class Dog extends Animal {
+    String name; // Hiding the superclass member
+
+    // Parameterized constructor
+    public Dog(String animalName, String dogName) {
+        super(animalName); // Calling superclass constructor
+        this.name = dogName; // Initializing subclass member
+        System.out.println("Dog name: " + this.name);
+    }
+}
+
+// Main class to demonstrate
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog("Animal Name", "Dog Name");
+    }
+}
