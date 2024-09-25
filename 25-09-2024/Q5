@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class PalindromeGenerator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        
+        int steps = 0;
+
+        while (!isPalindrome(number)) {
+            int reversed = reverseNumber(number);
+            number += reversed;
+            steps++;
+            System.out.println("Step " + steps + ": " + number);
+        }
+
+        System.out.println("Palindrome found: " + number);
+        
+        // Close the scanner
+        scanner.close();
+    }
+
+    // Method to check if a number is a palindrome
+    private static boolean isPalindrome(int num) {
+        int original = num;
+        int reversed = 0;
+
+        while (num > 0) {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+
+        return original == reversed;
+    }
+
+    // Method to reverse a number
+    private static int reverseNumber(int num) {
+        int reversed = 0;
+
+        while (num > 0) {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+
+        return reversed;
+    }
+}
