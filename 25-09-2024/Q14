@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class IntegerToRoman {
+
+    // Method to convert integer to Roman numeral
+    public static String intToRoman(int num) {
+        // Arrays of Roman symbols and their corresponding integer values
+        String[] romanNumerals = {
+            "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"
+        };
+        int[] values = {
+            1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1
+        };
+
+        StringBuilder roman = new StringBuilder();
+
+        // Convert the integer to Roman numeral
+        for (int i = 0; i < values.length; i++) {
+            while (num >= values[i]) {
+                roman.append(romanNumerals[i]);
+                num -= values[i];
+            }
+        }
+        return roman.toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Input number from user
+        System.out.print("Enter an integer (1 to 3999): ");
+        int number = scanner.nextInt();
+
+        // Check for valid input range
+        if (number < 1 || number > 3999) {
+            System.out.println("Please enter a number between 1 and 3999.");
+        } else {
+            // Convert to Roman numeral and display the result
+            String romanNumeral = intToRoman(number);
+            System.out.println("Roman numeral: " + romanNumeral);
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
